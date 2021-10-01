@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ChefingApp.Services
 {
-    public interface IJsonSerializeService
+    public interface IJsonSerializerService
     {
         string Serialize(object payload);
 

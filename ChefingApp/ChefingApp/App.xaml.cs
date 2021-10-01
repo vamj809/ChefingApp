@@ -2,7 +2,9 @@
 using Prism.Ioc;
 using Prism.Unity;
 using ChefingApp.Views;
+using ChefingApp.Services;
 using ChefingApp.ViewModels;
+using Xamarin.Forms;
 
 namespace ChefingApp
 {
@@ -13,12 +15,15 @@ namespace ChefingApp
         protected override void OnInitialized() {
             InitializeComponent();
 
-            MainPage = new SearchRecipesPage();
+            NavigationService.NavigateAsync($"NavigationPage/SearchRecipes");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<SearchRecipesPage, SearchRecipesViewModel>();
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<SearchRecipesPage, SearchRecipesViewModel>("SearchRecipes");
+            containerRegistry.Register<IJsonSerializerService, JsonSerializerService>();
+            containerRegistry.Register<IRecipesApiService, RecipesApiService>();
         }
     }
 }

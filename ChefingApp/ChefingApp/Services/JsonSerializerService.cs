@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace ChefingApp.Services
 {
-    public class JsonSerializerService : IJsonSerializeService
+    public class JsonSerializerService : IJsonSerializerService
     {
         private readonly JsonSerializerOptions _options;
         public JsonSerializerService()

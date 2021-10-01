@@ -11,7 +11,7 @@ namespace ChefingApp.Services
     public class RecipesApiService : IRecipesApiService
     {
         private HttpClient _httpClient;
-        IJsonSerializeService serializer = new JsonSerializerService();
+        IJsonSerializerService serializer = new JsonSerializerService();
         private const string ApiApplicationID = "8acfdcef";
         private const string ApiAccessKey = "YOUR ACCESS KEY";
 
