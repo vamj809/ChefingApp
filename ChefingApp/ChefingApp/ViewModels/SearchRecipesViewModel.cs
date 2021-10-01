@@ -13,7 +13,7 @@ namespace ChefingApp.ViewModels
         public ObservableCollection<RecipeHits> RecipesCollection { get; set; }
 
         public ICommand SearchCommand { get; }
-        private IRecipesApiService _recipeApiService;
+        private readonly IRecipesApiService _recipeApiService;
         public SearchRecipesViewModel()
         {
             SearchCommand = new Command(OnSearchClicked);
