@@ -1,28 +1,24 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Prism;
+using Prism.Ioc;
+using Prism.Unity;
+using ChefingApp.Views;
+using ChefingApp.ViewModels;
 
 namespace ChefingApp
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        public App()
-        {
+        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+
+        protected override void OnInitialized() {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new SearchRecipesPage();
         }
 
-        protected override void OnStart()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
+            containerRegistry.RegisterForNavigation<SearchRecipesPage, SearchRecipesViewModel>();
         }
     }
 }
