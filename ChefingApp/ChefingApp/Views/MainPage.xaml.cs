@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ChefingApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public Page1()
+        public MainPage()
         {
             InitializeComponent();
         }
