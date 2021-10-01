@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChefingApp.Views.SearchRecipesPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Welcome to ChefingApp!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Entry Text="{Binding SearchString}" Placeholder="Search for your favorite recipe..."/>
+            <Button Text="Search" Command="{Binding SearchCommand}"/>
+            <ListView ItemsSource="{Binding RecipesCollection}" Margin="20" VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding Recipe.Image}" 
+                                   Text="{Binding Recipe.Label}" 
+                                   Detail="{Binding Recipe.Url}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
