@@ -11,11 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="MainPage.xaml.cs" />
     <Compile Remove="Services\Class1.cs" />
     <Compile Remove="Views\HomePage.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="MainPage.xaml" />
     <EmbeddedResource Remove="Views\HomePage.xaml" />
   </ItemGroup>
 
