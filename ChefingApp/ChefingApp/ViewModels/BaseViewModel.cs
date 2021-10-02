@@ -1,8 +1,10 @@
-﻿using System.ComponentModel;
+﻿using PropertyChanged;
+using System.ComponentModel;
 
 namespace ChefingApp.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    [SuppressPropertyChangedWarnings]
+    public abstract class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
     }

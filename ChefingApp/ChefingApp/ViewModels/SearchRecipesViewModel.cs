@@ -1,9 +1,9 @@
 ﻿using ChefingApp.Models;
 using ChefingApp.Services;
+using Prism.Commands;
+using Prism.Services;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace ChefingApp.ViewModels
 {
@@ -12,23 +12,25 @@ namespace ChefingApp.ViewModels
         public string SearchString { get; set; }
         public ObservableCollection<RecipeHits> RecipesCollection { get; set; }
 
-        public ICommand SearchCommand { get; }
-        private IRecipesApiService _recipeApiService;
-        public SearchRecipesViewModel()
+        public DelegateCommand SearchCommand { get; }
+        private readonly IRecipesApiService _recipeApiService;
+        private readonly IPageDialogService _pageDialog;
+        public SearchRecipesViewModel(IPageDialogService pageDialog)
         {
-            SearchCommand = new Command(OnSearchClicked);
+            SearchCommand = new DelegateCommand(OnSearchClicked);
             _recipeApiService = new RecipesApiService();
+            _pageDialog = pageDialog;
         }
 
         public async void OnSearchClicked()
         {
             if (string.IsNullOrWhiteSpace(SearchString))
             {
-                await App.Current.MainPage.DisplayAlert("Alerta", "Debe especificar al menos un valor de búsqueda", "OK");
+                await _pageDialog.DisplayAlertAsync("Alerta", "Debe especificar al menos un valor de búsqueda", "OK");
             }
             else if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-                await App.Current.MainPage.DisplayAlert("Advertencia", "Debe estar conectado a internet para acceder a nuestros datos", "OK");
+                await _pageDialog.DisplayAlertAsync("Advertencia", "Debe estar conectado a internet para acceder a nuestros datos", "OK");
             }
             else
             {

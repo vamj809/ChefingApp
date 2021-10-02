@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ChefingApp.Services
+﻿namespace ChefingApp.Services
 {
     public interface IJsonSerializerService
     {
