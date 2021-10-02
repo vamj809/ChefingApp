@@ -1,24 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ChefingApp.Views.MainPage">
+             x:Class="ChefingApp.Views.MainPage"
+             Title="Chef-ing mortals since 2021">
     <ContentPage.Content>
 
-        <Grid RowDefinitions="Auto, *, *, *" ColumnDefinitions="*, *" VerticalOptions="Center" Padding="10" RowSpacing="10">
+        <Grid RowDefinitions="Auto, Auto, *, *, *, *" ColumnDefinitions="*, *" VerticalOptions="StartAndExpand" Padding="10" RowSpacing="10">
 
+            <Label Text="We help mere mortals become divine chefs with our incredible recipes." 
+                   HorizontalTextAlignment="Center" 
+                   Grid.ColumnSpan="2" 
+                   TextColor="#2196F3" FontSize="20" FontAttributes="Italic"/>
+            <Entry Grid.Row="1" Grid.ColumnSpan="2" Placeholder="Search by Category (Preview)" />
 
-            <Entry Placeholder="Search by Category" Grid.ColumnSpan="2"  />
-
-            <Button Text="Go to Search Page" Grid.Column="0" Grid.Row="1" Command="{Binding NavigateCommand}"/>
-            <Button Grid.Column="0" Grid.Row="2" />
-            <Button Grid.Column="0" Grid.Row="3"/>
-            <Button Grid.Column="1" Grid.Row="1" />
+            <Button Grid.Column="0" Grid.Row="2" Text="Go to Search Page" Command="{Binding NavigateCommand}"/>
+            <Button Grid.Column="0" Grid.Row="3" />
+            <Button Grid.Column="0" Grid.Row="4" />
+            <Button Grid.Column="0" Grid.Row="5" />
+            <Button Grid.Column="0" Grid.Row="6" />
             <Button Grid.Column="1" Grid.Row="2" />
             <Button Grid.Column="1" Grid.Row="3" />
             <Button Grid.Column="1" Grid.Row="4" />
             <Button Grid.Column="1" Grid.Row="5" />
-            <Button Grid.Column="0" Grid.Row="4" />
-            <Button Grid.Column="0" Grid.Row="5" />
+            <Button Grid.Column="1" Grid.Row="6" />
 
 
 

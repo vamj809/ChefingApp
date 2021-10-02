@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using ChefingApp.Helpers;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace ChefingApp.Views
