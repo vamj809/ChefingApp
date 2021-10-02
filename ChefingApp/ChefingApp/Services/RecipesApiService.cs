@@ -1,9 +1,7 @@
 ﻿using ChefingApp.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ChefingApp.Services
@@ -11,7 +9,7 @@ namespace ChefingApp.Services
     public class RecipesApiService : IRecipesApiService
     {
         private readonly HttpClient _httpClient;
-        readonly IJsonSerializerService serializer = new JsonSerializerService();
+        private readonly IJsonSerializerService serializer = new JsonSerializerService();
         private const string ApiApplicationID = "8acfdcef";
         private const string ApiAccessKey = "YOUR ACCESS KEY";
 
