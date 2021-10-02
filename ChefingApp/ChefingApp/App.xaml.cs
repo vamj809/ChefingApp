@@ -15,20 +15,16 @@ namespace ChefingApp
         protected override void OnInitialized() {
             InitializeComponent();
 
-            NavigationService.NavigateAsync($"NavigationPage/SearchRecipes");
-
-            //NavigationService.NavigateAsync("MainPage");
+            NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<SearchRecipesPage, SearchRecipesViewModel>("SearchRecipes");
+            containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.Register<IJsonSerializerService, JsonSerializerService>();
             containerRegistry.Register<IRecipesApiService, RecipesApiService>();
-
-            //containerRegistry.RegisterForNavigation<MainPage>("MainPage");
-            //containerRegistry.RegisterForNavigation<>();
         }
     }
 }

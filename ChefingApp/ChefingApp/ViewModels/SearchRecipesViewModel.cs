@@ -5,51 +5,31 @@ using Prism.Navigation;
 using Prism.Services;
 using System.Collections.ObjectModel;
 using Xamarin.Essentials;
-using Prism.Mvvm;
 
 namespace ChefingApp.ViewModels
 {
-    public class SearchRecipesViewModel : BaseViewModel
+    class SearchRecipesViewModel : BaseViewModel
     {
-        //private string _title;
-
-        //public string Title
-        //{
-        //    get { return _title; }
-        //    set { SetPriority(ref _title, value); }
-        //}
+        public string Title { get; set; }
 
         //private DelegateCommand _navigateCommand;
-        //private readonly INavigationService _navigationService;
 
         //public DelegateCommand NavigateCommand =>
         //    _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
-
-
-
-        //public SearchRecipesViewModel(INavigationService navigationService)
-        //{
-        //    Title = "Main Page";
-        //    _navigationService = navigationService;
-        //}
-
-        //async void ExecuteNavigateCommand()
-        //{
-        //    await _navigationService.NavigateAsync("");
-        //}
-
-
 
         public string SearchString { get; set; }
         public ObservableCollection<RecipeHits> RecipesCollection { get; set; }
 
         public DelegateCommand SearchCommand { get; }
+        private readonly INavigationService _navigationService;
         private readonly IRecipesApiService _recipeApiService;
         private readonly IPageDialogService _pageDialog;
-        public SearchRecipesViewModel(IPageDialogService pageDialog)
+        public SearchRecipesViewModel(IPageDialogService pageDialog, IRecipesApiService recipesApiService, INavigationService navigationService)
         {
             SearchCommand = new DelegateCommand(OnSearchClicked);
-            _recipeApiService = new RecipesApiService();
+            Title = "Search Recipes";
+            _recipeApiService = recipesApiService;
+            _navigationService = navigationService;
             _pageDialog = pageDialog;
         }
 
@@ -67,11 +47,6 @@ namespace ChefingApp.ViewModels
             {
                 RecipesCollection = await _recipeApiService.GetRecipesAsync(SearchString);
             }
-
-           
         }
- 
-
-
     }
 }
