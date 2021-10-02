@@ -7,9 +7,9 @@
         <Grid RowDefinitions="Auto, *, *, *" ColumnDefinitions="*, *" VerticalOptions="Center" Padding="10" RowSpacing="10">
 
 
-            <Entry Placeholder="Search by Catergory" Grid.ColumnSpan="2"  />
+            <Entry Placeholder="Search by Category" Grid.ColumnSpan="2"  />
 
-            <Button Grid.Column="0" Grid.Row="1" />
+            <Button Text="Go to Search Page" Grid.Column="0" Grid.Row="1" Command="{Binding NavigateCommand}"/>
             <Button Grid.Column="0" Grid.Row="2" />
             <Button Grid.Column="0" Grid.Row="3"/>
             <Button Grid.Column="1" Grid.Row="1" />

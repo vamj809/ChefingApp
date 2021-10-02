@@ -1,4 +1,5 @@
 ﻿using ChefingApp.Models;
+using ChefingApp.Helpers;
 using ChefingApp.Services;
 using Prism.Commands;
 using Prism.Navigation;
@@ -12,10 +13,10 @@ namespace ChefingApp.ViewModels
     {
         public string Title { get; set; }
 
-        //private DelegateCommand _navigateCommand;
+        private DelegateCommand _navigateCommand;
 
-        //public DelegateCommand NavigateCommand =>
-        //    _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
+        public DelegateCommand NavigateCommand =>
+            _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
 
         public string SearchString { get; set; }
         public ObservableCollection<RecipeHits> RecipesCollection { get; set; }
@@ -31,6 +32,11 @@ namespace ChefingApp.ViewModels
             _recipeApiService = recipesApiService;
             _navigationService = navigationService;
             _pageDialog = pageDialog;
+        }
+
+        public async void ExecuteNavigateCommand()
+        {
+            await _navigationService.NavigateAsync(NavigationConstants.Paths.SearchRecipes);
         }
 
         public async void OnSearchClicked()

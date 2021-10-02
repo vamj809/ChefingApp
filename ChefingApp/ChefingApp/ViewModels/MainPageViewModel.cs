@@ -1,21 +1,12 @@
 ﻿using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using ChefingApp.Helpers;
 
 namespace ChefingApp.ViewModels
 {
-    public class MainPageViewModel : BindableBase
+    public class MainPageViewModel : BaseViewModel
     {
-        private string _title;
-        
-        public string Title
-        {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
-        }
+        public string Title { get; set; }
 
         private DelegateCommand _navigateCommand;
         private readonly INavigationService _navigationService;
@@ -31,7 +22,7 @@ namespace ChefingApp.ViewModels
 
         async void ExecuteNavigateCommand()
         {
-            await _navigationService.NavigateAsync("");
+            await _navigationService.NavigateAsync(NavigationConstants.Paths.SearchRecipes);
         }
             
     }
