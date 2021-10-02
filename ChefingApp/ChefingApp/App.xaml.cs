@@ -16,6 +16,8 @@ namespace ChefingApp
             InitializeComponent();
 
             NavigationService.NavigateAsync($"NavigationPage/SearchRecipes");
+
+            //NavigationService.NavigateAsync("MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -24,6 +26,9 @@ namespace ChefingApp
             containerRegistry.RegisterForNavigation<SearchRecipesPage, SearchRecipesViewModel>("SearchRecipes");
             containerRegistry.Register<IJsonSerializerService, JsonSerializerService>();
             containerRegistry.Register<IRecipesApiService, RecipesApiService>();
+
+            //containerRegistry.RegisterForNavigation<MainPage>("MainPage");
+            //containerRegistry.RegisterForNavigation<>();
         }
     }
 }

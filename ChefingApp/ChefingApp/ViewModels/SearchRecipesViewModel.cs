@@ -34,6 +34,10 @@ namespace ChefingApp.ViewModels
             {
                 RecipesCollection = await _recipeApiService.GetRecipesAsync(SearchString);
             }
+
+           
         }
-    }
+
+
+}
 }
