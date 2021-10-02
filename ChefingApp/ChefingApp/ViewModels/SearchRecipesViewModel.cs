@@ -43,11 +43,11 @@ namespace ChefingApp.ViewModels
         {
             if (string.IsNullOrWhiteSpace(SearchString))
             {
-                await _pageDialog.DisplayAlertAsync("Alerta", "Debe especificar al menos un valor de búsqueda", "OK");
+                await _pageDialog.DisplayAlertAsync(AppResources.AlertDisplayTitle, AppResources.SearchRecipesEmptyFieldError, AppResources.AcceptButtonText);
             }
             else if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-                await _pageDialog.DisplayAlertAsync("Advertencia", "Debe estar conectado a internet para acceder a nuestros datos", "OK");
+                await _pageDialog.DisplayAlertAsync(AppResources.WarningDisplayTitle, AppResources.SearchRecipesDisconnectionError, AppResources.AcceptButtonText);
             }
             else
             {
