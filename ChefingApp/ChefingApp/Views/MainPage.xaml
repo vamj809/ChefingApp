@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChefingApp.Views.MainPage">
+    <ContentPage.Content>
+
+        <Grid RowDefinitions="Auto, *, *, *" ColumnDefinitions="*, *" VerticalOptions="Center" Padding="10" RowSpacing="10">
+
+
+            <Entry Placeholder="Search by Catergory" Grid.ColumnSpan="2"  />
+
+            <Button Grid.Column="0" Grid.Row="1" />
+            <Button Grid.Column="0" Grid.Row="2" />
+            <Button Grid.Column="0" Grid.Row="3"/>
+            <Button Grid.Column="1" Grid.Row="1" />
+            <Button Grid.Column="1" Grid.Row="2" />
+            <Button Grid.Column="1" Grid.Row="3" />
+            <Button Grid.Column="1" Grid.Row="4" />
+            <Button Grid.Column="1" Grid.Row="5" />
+            <Button Grid.Column="0" Grid.Row="4" />
+            <Button Grid.Column="0" Grid.Row="5" />
+
+
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
