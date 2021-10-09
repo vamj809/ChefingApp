@@ -1,12 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ChefingApp.Views.RecipesPage">
+             x:Class="ChefingApp.Views.RecipesPage"
+                Title="Cheffing">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="A" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
+
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry Grid.Row="1" Grid.ColumnSpan="2" Placeholder="Search for recipes..." />
+
+            <Label Text="Categories" HorizontalOptions="Center" TextColor="Black" FontSize="20" FontAttributes="Italic"/>
+
+            <Grid RowDefinitions="Auto, Auto, *, *, *, *" ColumnDefinitions="*, *" VerticalOptions="StartAndExpand" Padding="10" RowSpacing="10">
+                
+            <Button Grid.Column="0" Grid.Row="1" />
+            <Button Grid.Column="0" Grid.Row="2" />
+            <Button Grid.Column="0" Grid.Row="3" />
+            <Button Grid.Column="1" Grid.Row="1" />
+            <Button Grid.Column="1" Grid.Row="2" />
+            <Button Grid.Column="1" Grid.Row="3" />
+
+            </Grid>
+
+            <Label Text="Popular Recipes" TextColor="Black" HorizontalOptions="Center" FontSize="20" FontAttributes="Italic"/>
+
+            <Grid >
+                <Button VerticalOptions="CenterAndExpand"/>
+            </Grid>
+            <Label Text="Some of the greatest choices from the community." HorizontalOptions="Center" />
+            <Grid >
+                <Button VerticalOptions="CenterAndExpand"/>
+            </Grid>
+            <Label Text="All time favorites."  HorizontalOptions="Center"/>
+
+
+
+
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
