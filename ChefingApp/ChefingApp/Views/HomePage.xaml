@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ChefingApp.Views.HomePage"
-             Title="Chef-ing App">
+             Title="Chef-ing App"
+             x:Name="homePage">
 
 
     <ContentPage.ToolbarItems>
@@ -12,20 +13,18 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <Entry Grid.Row="1" Grid.ColumnSpan="2" Placeholder="Search for recipes..." />
-
             <Label Text="Meals of the Day" HorizontalOptions="Center" TextColor="Black" FontSize="20" FontAttributes="Italic"/>
 
-            <Grid RowDefinitions="Auto, Auto, *, *, *, *" ColumnDefinitions="*, *" VerticalOptions="StartAndExpand" Padding="10" RowSpacing="10">
-                
-            <Button Grid.Column="0" Grid.Row="1" />
-            <Button Grid.Column="0" Grid.Row="2" />
-            <Button Grid.Column="0" Grid.Row="3" />
-            <Button Grid.Column="1" Grid.Row="1" />
-            <Button Grid.Column="1" Grid.Row="2" />
-            <Button Grid.Column="1" Grid.Row="3" />
-
-            </Grid>
+            <CollectionView ItemsSource="{Binding MealsOfTheDayList}" SelectionMode="Single" VerticalOptions="StartAndExpand">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Button Text="{Binding Description}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
             <Label Text="Popular Recipes" TextColor="Black" HorizontalOptions="Center" FontSize="20" FontAttributes="Italic"/>
 

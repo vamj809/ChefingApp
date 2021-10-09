@@ -6,15 +6,16 @@ namespace ChefingApp.Models
 {
     public class Recipe
     {
-        public static List<RecipeCategory> MealTypes = new List<RecipeCategory>() {
+        public static ObservableCollection<RecipeCategory> MealTypes = new ObservableCollection<RecipeCategory>() {
             new RecipeCategory("Breakfast", "icono.tal"),
             new RecipeCategory("Lunch"),
             new RecipeCategory("Dinner"),
             new RecipeCategory("Snack"),
-            new RecipeCategory("Teatime")
+            new RecipeCategory("Teatime"),
+            new RecipeCategory("More...")
         };
 
-        public static List<RecipeCategory> DishTypes = new List<RecipeCategory>() {
+        public static ObservableCollection<RecipeCategory> DishTypes = new ObservableCollection<RecipeCategory>() {
             new RecipeCategory("Category 0"),
             new RecipeCategory("Category 1"),
             new RecipeCategory("Category 2"),

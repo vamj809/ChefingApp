@@ -12,16 +12,14 @@ namespace ChefingApp.ViewModels
         public DelegateCommand NavigateCommand =>
             _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
 
-        private readonly INavigationService _navigationService;
-        public DiscoveryPageViewModel(INavigationService navigationService)
+        public DiscoveryPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             Title = "Discovery Page";
-            _navigationService = navigationService;
         }
 
         async void ExecuteNavigateCommand()
         {
-            await _navigationService.NavigateAsync(NavigationConstants.Paths.SearchRecipes);
+            await NavigationService.NavigateAsync(NavigationConstants.Paths.SearchRecipes);
         }
     }
 }

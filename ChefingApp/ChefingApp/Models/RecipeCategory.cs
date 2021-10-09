@@ -4,8 +4,8 @@ namespace ChefingApp.Models
 {
     public class RecipeCategory
     {
-        public string Description;
-        public string Icon;
+        public string Description { get; set; }
+        public string Icon { get; set; }
 
         public RecipeCategory(string description, string icon = null)
         {

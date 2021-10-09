@@ -13,6 +13,7 @@ namespace ChefingApp.ViewModels
     {
         public string Title { get; set; }
         public string SearchString { get; set; }
+        public RecipeItem SelectedRecipe { get; set; }
         public ObservableCollection<RecipeHits> RecipesCollection { get; set; }
 
         private DelegateCommand _navigateCommand;
@@ -20,21 +21,19 @@ namespace ChefingApp.ViewModels
             _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
         public DelegateCommand SearchCommand { get; }
 
-        private readonly INavigationService _navigationService;
         private readonly IRecipesApiService _recipeApiService;
         private readonly IPageDialogService _pageDialog;
-        public SearchRecipesViewModel(IPageDialogService pageDialog, IRecipesApiService recipesApiService, INavigationService navigationService)
+        public SearchRecipesViewModel(IPageDialogService pageDialog, IRecipesApiService recipesApiService, INavigationService navigationService) : base(navigationService)
         {
             SearchCommand = new DelegateCommand(OnSearchClicked);
             Title = "Search Recipes";
             _recipeApiService = recipesApiService;
-            _navigationService = navigationService;
             _pageDialog = pageDialog;
         }
 
         public async void ExecuteNavigateCommand()
         {
-            await _navigationService.NavigateAsync(NavigationConstants.Paths.SearchRecipes);
+            await NavigationService.NavigateAsync(NavigationConstants.Paths.SearchRecipes);
         }
 
         public async void OnSearchClicked()

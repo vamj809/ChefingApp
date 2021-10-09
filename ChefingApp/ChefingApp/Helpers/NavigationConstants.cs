@@ -4,13 +4,12 @@
     {
         public static class Paths
         {
-            public const string BaseLayoutPage = "BaseLayoutPage";
-            public const string HomePage = "HomePage";
-            public const string DiscoveryPage = "DiscoveryPage";
+            public const string BaseLayout = "BaseLayoutPage";
+            public const string Home = "HomePage";
+            public const string Discovery = "DiscoveryPage";
             public const string SearchRecipes = "SearchRecipes";
-            public const string Recipes = "Recipes";
-            public const string Detail = "Detail";
-            public const string CookItem = "CookItem";
+            public const string RecipeDetails = "RecipeDetailsPage";
+            public const string RecipeViewer = "RecipeViewerPage";
         }
 
         public static class Parameters
