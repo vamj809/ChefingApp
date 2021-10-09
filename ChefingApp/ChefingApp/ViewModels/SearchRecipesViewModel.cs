@@ -12,16 +12,14 @@ namespace ChefingApp.ViewModels
     class SearchRecipesViewModel : BaseViewModel
     {
         public string Title { get; set; }
-
-        private DelegateCommand _navigateCommand;
-
-        public DelegateCommand NavigateCommand =>
-            _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
-
         public string SearchString { get; set; }
         public ObservableCollection<RecipeHits> RecipesCollection { get; set; }
 
+        private DelegateCommand _navigateCommand;
+        public DelegateCommand NavigateCommand =>
+            _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
         public DelegateCommand SearchCommand { get; }
+
         private readonly INavigationService _navigationService;
         private readonly IRecipesApiService _recipeApiService;
         private readonly IPageDialogService _pageDialog;

@@ -3,31 +3,31 @@ using System;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Threading.Tasks;
+using ChefingApp.Helpers;
 
 namespace ChefingApp.Services
 {
     public class RecipesApiService : IRecipesApiService
     {
         private readonly HttpClient _httpClient;
-        private readonly IJsonSerializerService serializer = new JsonSerializerService();
-        private const string ApiApplicationID = "8acfdcef";
-        private const string ApiAccessKey = "YOUR ACCESS KEY";
+        private readonly IJsonSerializerService _serializer;
 
-        public RecipesApiService()
+        public RecipesApiService(IJsonSerializerService jsonSerializer)
         {
+            _serializer = jsonSerializer;
             _httpClient = new HttpClient()
             {
-                BaseAddress = new Uri("https://api.edamam.com/api/recipes/v2")
+                BaseAddress = new Uri(Config.ApiBaseUrl)
             };
         }
         public async Task<ObservableCollection<RecipeHits>> GetRecipesAsync(string query)
         {
-            HttpResponseMessage response = await _httpClient.GetAsync($"?type=public&app_id={ApiApplicationID}&app_key={ApiAccessKey}&q={query}&field=label&field=image&field=url");
+            HttpResponseMessage response = await _httpClient.GetAsync($"?type=public&app_id={Config.ApiApplicationID}&app_key={Config.ApiAccessKey}&q={query}&field=label&field=image&field=url");
 
             if (response.IsSuccessStatusCode)
             {
                 string responseString = await response.Content.ReadAsStringAsync();
-                RecipeSearchResults recipeResponse = serializer.Deserialize<RecipeSearchResults>(responseString);
+                RecipeSearchResults recipeResponse = _serializer.Deserialize<RecipeSearchResults>(responseString);
 
                 return recipeResponse.Hits;
             }

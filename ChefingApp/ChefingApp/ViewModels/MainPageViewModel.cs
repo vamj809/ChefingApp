@@ -9,11 +9,10 @@ namespace ChefingApp.ViewModels
         public string Title { get; set; }
 
         private DelegateCommand _navigateCommand;
-        private readonly INavigationService _navigationService;
-
         public DelegateCommand NavigateCommand =>
             _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
 
+        private readonly INavigationService _navigationService;
         public MainPageViewModel(INavigationService navigationService)
         {
             Title = "Main Page";
@@ -24,6 +23,5 @@ namespace ChefingApp.ViewModels
         {
             await _navigationService.NavigateAsync(NavigationConstants.Paths.SearchRecipes);
         }
-            
     }
 }
