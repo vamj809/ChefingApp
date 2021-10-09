@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="ChefingApp.Views.BaseLayoutPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
+            xmlns:local="clr-namespace:ChefingApp.Views"
+            android:TabbedPage.ToolbarPlacement="Bottom">
+    
+    <NavigationPage Title="Home" HeightRequest="20">
+        <x:Arguments>
+            <local:HomePage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Discovery" HeightRequest="20">
+        <x:Arguments>
+            <local:DiscoveryPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Search"  HeightRequest="20">
+        <x:Arguments>
+            <local:SearchRecipesPage />
+        </x:Arguments>
+    </NavigationPage>
+    <ContentPage Title="Favorites"/>
+    
+</TabbedPage>

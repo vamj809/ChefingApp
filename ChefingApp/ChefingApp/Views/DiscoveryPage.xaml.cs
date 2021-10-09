@@ -5,9 +5,9 @@ using Xamarin.Forms.Xaml;
 namespace ChefingApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class DiscoveryPage : ContentPage
     {
-        public MainPage()
+        public DiscoveryPage()
         {
             InitializeComponent();
         }

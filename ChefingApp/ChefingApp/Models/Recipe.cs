@@ -1,8 +1,33 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text.Json.Serialization;
 
 namespace ChefingApp.Models
 {
+    public class Recipe
+    {
+        public static List<RecipeCategory> MealTypes = new List<RecipeCategory>() {
+            new RecipeCategory("Breakfast", "icono.tal"),
+            new RecipeCategory("Lunch"),
+            new RecipeCategory("Dinner"),
+            new RecipeCategory("Snack"),
+            new RecipeCategory("Teatime")
+        };
+
+        public static List<RecipeCategory> DishTypes = new List<RecipeCategory>() {
+            new RecipeCategory("Category 0"),
+            new RecipeCategory("Category 1"),
+            new RecipeCategory("Category 2"),
+            new RecipeCategory("Category 3"),
+            new RecipeCategory("Category 4"),
+            new RecipeCategory("Category 5"),
+            new RecipeCategory("Category 6"),
+            new RecipeCategory("Category 7"),
+            new RecipeCategory("Category 8"),
+            new RecipeCategory("Category 9")
+        };
+    }
+
     public class RecipeItem
     {
         [JsonPropertyName("label")]
@@ -13,6 +38,15 @@ namespace ChefingApp.Models
 
         [JsonPropertyName("url")]
         public string Url { get; set; }
+
+        [JsonPropertyName("ingredientLines")]
+        public string[] Ingredients { get; set; }
+
+        [JsonPropertyName("calories")]
+        public decimal Calories { get; set; }
+
+        [JsonPropertyName("source")]
+        public string Source { get; set; }
     }
 
     public class RecipeHits

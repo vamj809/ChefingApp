@@ -4,7 +4,7 @@ using ChefingApp.Helpers;
 
 namespace ChefingApp.ViewModels
 {
-    public class MainPageViewModel : BaseViewModel
+    public class DiscoveryPageViewModel : BaseViewModel
     {
         public string Title { get; set; }
 
@@ -13,9 +13,9 @@ namespace ChefingApp.ViewModels
             _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
 
         private readonly INavigationService _navigationService;
-        public MainPageViewModel(INavigationService navigationService)
+        public DiscoveryPageViewModel(INavigationService navigationService)
         {
-            Title = "Main Page";
+            Title = "Discovery Page";
             _navigationService = navigationService;
         }
 

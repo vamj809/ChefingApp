@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ChefingApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DetailPage : ContentPage
+    public partial class RecipeDetailsPage : ContentPage
     {
-        public DetailPage()
+        public RecipeDetailsPage()
         {
             InitializeComponent();
         }
