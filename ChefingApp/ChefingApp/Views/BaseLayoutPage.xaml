@@ -21,6 +21,10 @@
             <local:SearchRecipesPage />
         </x:Arguments>
     </NavigationPage>
-    <ContentPage Title="Favorites"/>
-    
+    <NavigationPage Title="Favorites"  HeightRequest="20">
+        <x:Arguments>
+            <local:RecipeDetailsPage />
+        </x:Arguments>
+    </NavigationPage>
+
 </TabbedPage>
