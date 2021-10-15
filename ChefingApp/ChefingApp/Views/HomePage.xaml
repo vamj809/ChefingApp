@@ -13,7 +13,7 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <Label Text="Meals of the Day" HorizontalOptions="Center" TextColor="Black" FontSize="20" FontAttributes="Italic"/>
+            <Label Text="Meals of the Day" Style="{StaticResource HeaderLabelStyle}"/>
 
             <CollectionView ItemsSource="{Binding MealsOfTheDayList}" SelectionMode="Single" VerticalOptions="StartAndExpand">
                 <CollectionView.ItemsLayout>
