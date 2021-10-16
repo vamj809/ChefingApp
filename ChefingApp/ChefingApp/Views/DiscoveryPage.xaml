@@ -11,9 +11,9 @@
                    HorizontalTextAlignment="Center" 
                    Grid.ColumnSpan="2" 
                    FontSize="20" FontAttributes="Italic"/>
-            
-            
-            <CollectionView ItemsSource="{Binding DiscoveryMeals}" SelectionMode="Single" VerticalOptions="StartAndExpand">
+
+
+            <CollectionView ItemsSource="{Binding DiscoveryMeals}" SelectionMode="Single" SelectedItem="{Binding SelectedRecipeCategory}" VerticalOptions="StartAndExpand">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="20" VerticalItemSpacing="20"/>
                 </CollectionView.ItemsLayout>

@@ -6,24 +6,29 @@ using System.Collections.ObjectModel;
 
 namespace ChefingApp.ViewModels
 {
-    public class DiscoveryPageViewModel : BaseViewModel
+    public class DiscoveryPageViewModel : BaseRecipeNavigationViewModel
     {
-        public string Title { get; set; }
+        private RecipeCategory _selectedRecipeCategory;
+        public RecipeCategory SelectedRecipeCategory
+        {
+            get
+            {
+                return _selectedRecipeCategory;
+            }
+            set
+            {
+                _selectedRecipeCategory = value;
+                if (_selectedRecipeCategory != null)
+                {
+                    GoToSearchCommand.Execute(
+                        _selectedRecipeCategory.IsInternal ? null : _selectedRecipeCategory.Description);
+                }
+            }
+        }
         public ObservableCollection<RecipeCategory> DiscoveryMeals { get; set; }
-
-        private DelegateCommand _navigateCommand;
-        public DelegateCommand NavigateCommand =>
-            _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
-
         public DiscoveryPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            Title = "Discovery Page";
             DiscoveryMeals = Recipe.DishTypes;
-        }
-
-        async void ExecuteNavigateCommand()
-        {
-            await NavigationService.NavigateAsync(NavigationConstants.Paths.SearchRecipes);
         }
     }
 }
