@@ -2,9 +2,6 @@
 using ChefingApp.Models;
 using Prism.Commands;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ChefingApp.ViewModels
 {

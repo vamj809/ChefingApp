@@ -79,6 +79,15 @@ namespace ChefingApp.Helpers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to calories.
+        /// </summary>
+        public static string Calories {
+            get {
+                return ResourceManager.GetString("Calories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You must have a network connection to access our data.
         /// </summary>
         public static string SearchRecipesDisconnectionError {

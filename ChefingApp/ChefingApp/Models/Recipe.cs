@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text.Json.Serialization;
+using ChefingApp.Helpers;
 
 namespace ChefingApp.Models
 {
@@ -45,6 +46,8 @@ namespace ChefingApp.Models
 
         [JsonPropertyName("calories")]
         public decimal Calories { get; set; }
+
+        public string CaloriesLabel { get => Calories > 0 ? Calories.ToString("0.##") + " " + AppResources.Calories : null; }
 
         [JsonPropertyName("source")]
         public string Source { get; set; }

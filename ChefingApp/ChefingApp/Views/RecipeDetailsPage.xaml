@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:ChefingApp.ViewModels" x:DataType="viewmodels:RecipeDetailsViewModel"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:ChefingApp.ViewModels" 
+             x:DataType="viewmodels:RecipeDetailsViewModel"
              x:Class="ChefingApp.Views.RecipeDetailsPage">
     <ContentPage.Content>
         <StackLayout>
@@ -9,6 +11,7 @@
             <Image Source="{Binding Recipe.Image}" Aspect="AspectFill"
                    HeightRequest="300" MinimumWidthRequest="200"/>
             <Label Text="{Binding Recipe.Label}" FontSize="Title"/>
+            <Label Text="{Binding Recipe.CaloriesLabel}" FontSize="Body"/>
             <Button Text="Preview Recipe" Command="{Binding PreviewRecipeCommand}"/>
             <Label Text="Ingredients" FontSize="Title" FontAttributes="Bold"/>
             <ListView ItemsSource="{Binding Recipe.Ingredients}"/>
