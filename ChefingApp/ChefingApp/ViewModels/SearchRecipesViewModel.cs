@@ -9,16 +9,27 @@ using Xamarin.Essentials;
 
 namespace ChefingApp.ViewModels
 {
-    class SearchRecipesViewModel : BaseViewModel
+    class SearchRecipesViewModel : BaseViewModel, INavigationAware
     {
         public string Title { get; set; }
         public string SearchString { get; set; }
-        public RecipeItem SelectedRecipe { get; set; }
-        public ObservableCollection<RecipeHits> RecipesCollection { get; set; }
 
-        private DelegateCommand _navigateCommand;
-        public DelegateCommand NavigateCommand =>
-            _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
+        private RecipeHits _selectedRecipe;
+        public RecipeHits SelectedRecipe
+        {
+            get {
+                return _selectedRecipe;
+            }
+            set {
+                _selectedRecipe = value;
+                if(_selectedRecipe != null)
+                {
+                    GoToRecipeDetailsCommand.Execute(_selectedRecipe);
+                }
+            }
+        }
+        public ObservableCollection<RecipeHits> RecipesCollection { get; set; }
+        public DelegateCommand<RecipeHits> GoToRecipeDetailsCommand { get; set; }
         public DelegateCommand SearchCommand { get; }
 
         private readonly IRecipesApiService _recipeApiService;
@@ -26,14 +37,17 @@ namespace ChefingApp.ViewModels
         public SearchRecipesViewModel(IPageDialogService pageDialog, IRecipesApiService recipesApiService, INavigationService navigationService) : base(navigationService)
         {
             SearchCommand = new DelegateCommand(OnSearchClicked);
-            Title = "Search Recipes";
             _recipeApiService = recipesApiService;
             _pageDialog = pageDialog;
+            GoToRecipeDetailsCommand = new DelegateCommand<RecipeHits>(ExecuteNavigateCommand);
         }
 
-        public async void ExecuteNavigateCommand()
+        public async void ExecuteNavigateCommand(RecipeHits recipeHits)
         {
-            await NavigationService.NavigateAsync(NavigationConstants.Paths.SearchRecipes);
+            await NavigationService.NavigateAsync($"/{NavigationConstants.Paths.BaseLayout}/{NavigationConstants.Paths.RecipeDetails}", new NavigationParameters()
+            {
+                { NavigationConstants.Parameters.RecipeItem, recipeHits.Recipe }
+            });
         }
 
         public async void OnSearchClicked()
@@ -50,6 +64,16 @@ namespace ChefingApp.ViewModels
             {
                 RecipesCollection = await _recipeApiService.GetRecipesAsync(SearchString);
             }
+        }
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+
         }
     }
 }

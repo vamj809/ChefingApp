@@ -16,7 +16,10 @@ namespace ChefingApp.ViewModels
         {
             PreviewRecipeCommand = new DelegateCommand(async () =>
             {
-                await navigationService.NavigateAsync(NavigationConstants.Paths.RecipeViewer);
+                await navigationService.NavigateAsync(NavigationConstants.Paths.RecipeViewer, new NavigationParameters()
+                {
+                    { NavigationConstants.Parameters.RecipeUrl, Recipe.Url }
+                });
             });
         }
 
