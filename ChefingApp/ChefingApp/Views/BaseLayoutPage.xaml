@@ -22,10 +22,5 @@
             <local:SearchRecipesPage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Favorites" BarBackground="#75CCFF">
-        <x:Arguments>
-            <local:RecipeDetailsPage />
-        </x:Arguments>
-    </NavigationPage>
 
 </TabbedPage>
