@@ -45,7 +45,7 @@
                                     <Image Source="{Binding Recipe.Image}" 
                                                    VerticalOptions="Start" HorizontalOptions="FillAndExpand"
                                                    Margin="-30" Aspect="AspectFill" HeightRequest="90"/>
-                                    <Label Text="{Binding Recipe.Label}"
+                                    <Label Text="{Binding Recipe.Label}" TextColor="Black"
                                                    Margin="-5,30,-5,0" FontSize="Body" MaxLines="3"/>
                                     <Label Text="{Binding Recipe.CaloriesLabel}" 
                                                    Margin="-4,0,-5,0" TextColor="DarkGray" HorizontalOptions="Start" />
