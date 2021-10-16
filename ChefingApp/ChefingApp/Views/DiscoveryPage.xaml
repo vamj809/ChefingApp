@@ -20,7 +20,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame Style="{StaticResource ButtonLabelStyle}">
-                            <Label Text="{Binding Description}"/>
+                            <Label Text="{Binding Description}" Style="{StaticResource OptionLabelStyle}"/>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

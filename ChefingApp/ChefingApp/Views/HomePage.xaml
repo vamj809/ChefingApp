@@ -12,7 +12,7 @@
         <StackLayout>
             <Label HorizontalOptions="Center" Text="Meals of the Day" Style="{StaticResource HeaderLabelStyle}"/>
 
-            <CollectionView ItemsSource="{Binding MealsOfTheDayList}" 
+            <CollectionView ItemsSource="{Binding MealsOfTheDayList}" HeightRequest="230"
                             SelectionMode="Single" SelectedItem="{Binding SelectedRecipeCategory}" 
                             VerticalOptions="StartAndExpand">
                 <CollectionView.ItemsLayout>
@@ -21,24 +21,40 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame Style="{StaticResource ButtonLabelStyle}" >
-                            <Label Text="{Binding Description}" />
+                            <Label Text="{Binding Description}" Style="{StaticResource OptionLabelStyle}"/>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
             <Label Text="Popular Recipes"  Style="{StaticResource HeaderLabelStyle}" HorizontalOptions="Center" />
-
-            <Grid >
-                <Button Grid.Row="0" ImageSource="{Binding Recipe.Image}"/>
-
-                <Label Grid.Row="1" Text="Some of the greatest choices from the community." HorizontalOptions="Center" />
-
-                <Button Grid.Row="2"/>
-
-                <Label Grid.Row="3"  Text="All time favorites."  HorizontalOptions="Center"/>
-            </Grid>
+            <Label Text="Some of the greatest choices from the community" HorizontalOptions="Center" />
+            <CollectionView ItemsSource="{Binding RecipesSuggestions}"
+                            SelectionMode="Single" SelectedItem="{Binding SelectedRecipe}" 
+                            HorizontalOptions="CenterAndExpand" HeightRequest="200">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal"
+                                       ItemSpacing="5"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <AbsoluteLayout Padding="5">
+                            <Frame HasShadow="True" BackgroundColor="White" CornerRadius="15"
+                                   IsClippedToBounds="True" WidthRequest="115">
+                                <StackLayout Padding="0">
+                                    <Image Source="{Binding Recipe.Image}" 
+                                                   VerticalOptions="Start" HorizontalOptions="FillAndExpand"
+                                                   Margin="-30" Aspect="AspectFill" HeightRequest="90"/>
+                                    <Label Text="{Binding Recipe.Label}"
+                                                   Margin="-5,30,-5,0" FontSize="Body"/>
+                                    <Label Text="{Binding Recipe.CaloriesLabel}" 
+                                                   Margin="-4,0,-5,0" TextColor="DarkGray" HorizontalOptions="Start" />
+                                </StackLayout>
+                            </Frame>
+                        </AbsoluteLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>

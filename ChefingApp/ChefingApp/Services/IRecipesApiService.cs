@@ -6,6 +6,6 @@ namespace ChefingApp.Services
 {
     public interface IRecipesApiService
     {
-        Task<ObservableCollection<RecipeHits>> GetRecipesAsync(string query);
+        Task<ObservableCollection<RecipeHits>> GetRecipesAsync(string query, bool randomRequest = false);
     }
 }

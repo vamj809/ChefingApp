@@ -21,9 +21,10 @@ namespace ChefingApp.Services
             };
         }
 
-        public async Task<ObservableCollection<RecipeHits>> GetRecipesAsync(string query)
+        public async Task<ObservableCollection<RecipeHits>> GetRecipesAsync(string query, bool randomRequest = false)
         {
-            HttpResponseMessage response = await _httpClient.GetAsync($"?type=public&app_id={Config.ApiApplicationID}&app_key={Config.ApiAccessKey}&q={query}&field=label&field=image&field=url&field=ingredientLines&field=calories&field=source");
+            string text = $"?type=public&app_id={Config.ApiApplicationID}&app_key={Config.ApiAccessKey}&q={query}&field=label&field=image&field=url&field=ingredientLines&field=calories&field=source{(randomRequest ? "&random=true" : "")}";
+            HttpResponseMessage response = await _httpClient.GetAsync(text);
 
             if (response.IsSuccessStatusCode)
             {

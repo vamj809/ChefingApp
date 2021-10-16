@@ -8,14 +8,10 @@
         <ResourceDictionary>
             <Style x:Key="HeaderLabelStyle" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontSize" Value="Large" />
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="TextColor" Value="Black" />
-            </Style>
-            <Style x:Key="OptionLabelStyle" TargetType="Label">
-                <Setter Property="BackgroundColor" Value="#64ABD4"/>
-               
             </Style>
             <Style x:Key="DescriptionLabelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Small" />
@@ -35,9 +31,13 @@
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="FontSize" Value="36"/>
             </Style>
-            <Style x:Key="ButtonLabelStyle" TargetType="Label">
+            <Style x:Key="ButtonLabelStyle" TargetType="Frame">
                 <Setter Property="Background" Value="#557693"/>
                 <Setter Property="HeightRequest" Value="20"/>
+            </Style>
+            <Style x:Key="OptionLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="LightCyan"/>
             </Style>
 
         </ResourceDictionary>
