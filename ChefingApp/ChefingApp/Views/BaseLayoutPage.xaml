@@ -7,17 +7,17 @@
             android:TabbedPage.ToolbarPlacement="Bottom"
             Style="{StaticResource SideBackgroundStyle}">
 
-    <NavigationPage Title="Home" BarBackground="#75CCFF">
+    <NavigationPage Title="Home" IconImageSource="HomeIcon" BarBackground="#75CCFF">
         <x:Arguments>
             <local:HomePage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage  Title="Discovery" BarBackground="#75CCFF" >
+    <NavigationPage  Title="Discovery" IconImageSource="DiscoveryIcon" BarBackground="#75CCFF" >
         <x:Arguments>
             <local:DiscoveryPage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Search" BarBackground="#75CCFF" >
+    <NavigationPage Title="Search" IconImageSource="SearchIcon"  BarBackground="#75CCFF" >
         <x:Arguments>
             <local:SearchRecipesPage />
         </x:Arguments>
