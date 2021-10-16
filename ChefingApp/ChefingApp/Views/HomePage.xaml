@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ChefingApp.Views.HomePage"
-             Title="Chef-ing App"
-             x:Name="homePage">
+             Title="Cheffing App"
+             x:Name="homePage"
+             Style="{StaticResource BackgroundStyle}"
+             >
 
 
     <ContentPage.ToolbarItems>
@@ -13,7 +15,7 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <Label Text="Meals of the Day" Style="{StaticResource HeaderLabelStyle}"/>
+            <Label HorizontalOptions="Center" Text="Meals of the Day" Style="{StaticResource HeaderLabelStyle}"/>
 
             <CollectionView ItemsSource="{Binding MealsOfTheDayList}" SelectionMode="Single" VerticalOptions="StartAndExpand">
                 <CollectionView.ItemsLayout>
@@ -26,17 +28,17 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <Label Text="Popular Recipes" TextColor="Black" HorizontalOptions="Center" FontSize="20" FontAttributes="Italic"/>
+            <Label Text="Popular Recipes"  Style="{StaticResource HeaderLabelStyle}" HorizontalOptions="Center" />
 
             <Grid >
-                <Button VerticalOptions="CenterAndExpand"/>
-            </Grid>
-            <Label Text="Some of the greatest choices from the community." HorizontalOptions="Center" />
-            <Grid >
-                <Button VerticalOptions="CenterAndExpand"/>
-            </Grid>
-            <Label Text="All time favorites."  HorizontalOptions="Center"/>
+                <Button Grid.Row="0" ImageSource="{Binding Recipe.Image}"/>
 
+                <Label Grid.Row="1" Text="Some of the greatest choices from the community." HorizontalOptions="Center" />
+
+                <Button Grid.Row="2"/>
+
+                <Label Grid.Row="3"  Text="All time favorites."  HorizontalOptions="Center"/>
+            </Grid>
         </StackLayout>
 
     </ContentPage.Content>

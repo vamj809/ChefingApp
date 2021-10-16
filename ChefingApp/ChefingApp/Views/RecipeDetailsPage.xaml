@@ -10,7 +10,7 @@
                 HorizontalOptions="CenterAndExpand" />
             <Image Source="{Binding Recipe.Image}" Aspect="AspectFill"
                    HeightRequest="300" MinimumWidthRequest="200"/>
-            <Label Text="{Binding Recipe.Label}" FontSize="Title"/>
+            <Label Text="{Binding Recipe.Label}" FontSize="Title" />
             <Label Text="{Binding Recipe.CaloriesLabel}" FontSize="Body"/>
             <Button Text="Preview Recipe" Command="{Binding PreviewRecipeCommand}"/>
             <Label Text="Ingredients" FontSize="Title" FontAttributes="Bold"/>

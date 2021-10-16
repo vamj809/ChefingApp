@@ -4,24 +4,25 @@
             x:Class="ChefingApp.Views.BaseLayoutPage"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
             xmlns:local="clr-namespace:ChefingApp.Views"
-            android:TabbedPage.ToolbarPlacement="Bottom">
-    
-    <NavigationPage Title="Home" HeightRequest="20">
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            Style="{StaticResource SideBackgroundStyle}">
+
+    <NavigationPage Title="Home" BarBackground="#75CCFF">
         <x:Arguments>
             <local:HomePage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Discovery" HeightRequest="20">
+    <NavigationPage  Title="Discovery" BarBackground="#75CCFF">
         <x:Arguments>
             <local:DiscoveryPage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Search"  HeightRequest="20">
+    <NavigationPage Title="Search" BarBackground="#75CCFF" >
         <x:Arguments>
             <local:SearchRecipesPage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Favorites"  HeightRequest="20">
+    <NavigationPage Title="Favorites" BarBackground="#75CCFF">
         <x:Arguments>
             <local:RecipeDetailsPage />
         </x:Arguments>

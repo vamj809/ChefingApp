@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ChefingApp.Views.SearchRecipesPage">
+             x:Class="ChefingApp.Views.SearchRecipesPage"
+             Style="{StaticResource BackgroundStyle}">
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Find your life's recipe!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            <Frame Padding="24" CornerRadius="0" BackgroundColor="#75CCFF">
+                <Label Text="Find your life's recipe!" Style="{StaticResource TitleLabelStyle}" />
             </Frame>
             <Entry Text="{Binding SearchString}" Placeholder="Search for your favorite recipe..."/>
             <Button Text="Search" Command="{Binding SearchCommand}"/>
@@ -16,6 +17,7 @@
                     <DataTemplate>
                         <ImageCell ImageSource="{Binding Recipe.Image}" 
                                    Text="{Binding Recipe.Label}" 
+                                   TextColor="White" 
                                    Detail="{Binding Recipe.Url}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
