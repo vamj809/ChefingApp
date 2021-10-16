@@ -16,7 +16,7 @@ namespace ChefingApp.ViewModels
         {
             GoToSearchCommand = new DelegateCommand<string>(async (query) =>
             {
-                await navigationService.NavigateAsync($"/{NavigationConstants.Paths.BaseLayout}/{NavigationConstants.Paths.SearchRecipes}", new NavigationParameters()
+                await navigationService.NavigateAsync($"{NavigationConstants.Paths.SearchRecipes}", new NavigationParameters()
                 {
                     { NavigationConstants.Parameters.RecipeCategory, query }
                 });
