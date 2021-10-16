@@ -14,7 +14,8 @@
 
         public static class Parameters
         {
-            
+            public const string RecipeItem = "RecipeItem";
+            public const string RecipeUrl = "RecipeUrl";
         }
     }
 }
