@@ -48,7 +48,6 @@ namespace ChefingApp.ViewModels
             {
                 { NavigationConstants.Parameters.RecipeItem, recipeHits.Recipe }
             });
-            SelectedRecipe = null;
         }
 
         public async void OnSearchClicked()
@@ -69,7 +68,7 @@ namespace ChefingApp.ViewModels
 
         public void Initialize(INavigationParameters parameters)
         {
-            
+            _selectedRecipe = null;
         }
     }
 }
