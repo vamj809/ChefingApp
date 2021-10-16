@@ -9,7 +9,7 @@ using Xamarin.Essentials;
 
 namespace ChefingApp.ViewModels
 {
-    class SearchRecipesViewModel : BaseViewModel, INavigationAware
+    class SearchRecipesViewModel : BaseViewModel, IInitialize
     {
         public string Title { get; set; }
         public string SearchString { get; set; }
@@ -44,10 +44,11 @@ namespace ChefingApp.ViewModels
 
         public async void ExecuteNavigateCommand(RecipeHits recipeHits)
         {
-            await NavigationService.NavigateAsync($"/{NavigationConstants.Paths.BaseLayout}/{NavigationConstants.Paths.RecipeDetails}", new NavigationParameters()
+            await NavigationService.NavigateAsync($"{NavigationConstants.Paths.RecipeDetails}", new NavigationParameters()
             {
                 { NavigationConstants.Parameters.RecipeItem, recipeHits.Recipe }
             });
+            SelectedRecipe = null;
         }
 
         public async void OnSearchClicked()
@@ -66,14 +67,9 @@ namespace ChefingApp.ViewModels
             }
         }
 
-        public void OnNavigatedFrom(INavigationParameters parameters)
+        public void Initialize(INavigationParameters parameters)
         {
-
-        }
-
-        public void OnNavigatedTo(INavigationParameters parameters)
-        {
-
+            
         }
     }
 }

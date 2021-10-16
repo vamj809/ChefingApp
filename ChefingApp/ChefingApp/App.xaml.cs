@@ -22,6 +22,7 @@ namespace ChefingApp
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<BaseLayoutPage>();
             containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>(NavigationConstants.Paths.Home);
             containerRegistry.RegisterForNavigation<DiscoveryPage>();

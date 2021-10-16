@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Find your life's recipe!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                <Label Text="Delight yourself with our recipes!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
             <Entry Text="{Binding SearchString}" Placeholder="Search for your favorite recipe..."/>
             <Button Text="Search" Command="{Binding SearchCommand}"/>

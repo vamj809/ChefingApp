@@ -10,6 +10,8 @@
             public const string SearchRecipes = "SearchRecipes";
             public const string RecipeDetails = "RecipeDetailsPage";
             public const string RecipeViewer = "RecipeViewerPage";
+
+            public const string NavigationPage = "NavigationPage";
         }
 
         public static class Parameters
