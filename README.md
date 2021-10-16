@@ -1,5 +1,5 @@
 # ChefingApp
-Chef-ing mortals.
+Chef-ing mortals through our recipes.
 
 **Team:**
 * Victor A. Montero (1067196)
@@ -9,4 +9,16 @@ Chef-ing mortals.
 
 **_Trello Board:_** https://trello.com/b/49SwEDjg/new-app
 
+## Captures
+
+![Alt text](Evidences/HomePage.png)
+![Alt text](Evidences/DiscoveryPage.png)
+![Alt text](Evidences/SearchPage.png)
+![Alt text](Evidences/IngredientsPage.png)
+![Alt text](Evidences/RecipesPage.png)
+
 ## Libraries
+
+* Prism.Unity.Forms
+* Fody.PropertyChanged
+* Edamam API (Recipe Search)
