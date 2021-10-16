@@ -1,5 +1,5 @@
 # ChefingApp
-Chef-ing mortals through our recipes.
+Chef-ing mortals through our recipes. Find something new to cook every single day through one of the largest databases of food and nutrition right in the palm of your hand.
 
 **Team:**
 * Victor A. Montero (1067196)
