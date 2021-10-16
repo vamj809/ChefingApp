@@ -1,12 +1,15 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
 using ChefingApp.Helpers;
+using ChefingApp.Models;
+using System.Collections.ObjectModel;
 
 namespace ChefingApp.ViewModels
 {
     public class DiscoveryPageViewModel : BaseViewModel
     {
         public string Title { get; set; }
+        public ObservableCollection<RecipeCategory> DiscoveryMeals { get; set; }
 
         private DelegateCommand _navigateCommand;
         public DelegateCommand NavigateCommand =>
@@ -15,6 +18,7 @@ namespace ChefingApp.ViewModels
         public DiscoveryPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             Title = "Discovery Page";
+            DiscoveryMeals = Recipe.DishTypes;
         }
 
         async void ExecuteNavigateCommand()

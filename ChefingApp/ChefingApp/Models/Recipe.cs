@@ -17,16 +17,16 @@ namespace ChefingApp.Models
         };
 
         public static ObservableCollection<RecipeCategory> DishTypes = new ObservableCollection<RecipeCategory>() {
-            new RecipeCategory("Category 0"),
-            new RecipeCategory("Category 1"),
-            new RecipeCategory("Category 2"),
-            new RecipeCategory("Category 3"),
-            new RecipeCategory("Category 4"),
-            new RecipeCategory("Category 5"),
-            new RecipeCategory("Category 6"),
-            new RecipeCategory("Category 7"),
-            new RecipeCategory("Category 8"),
-            new RecipeCategory("Category 9")
+            new RecipeCategory("Pancake"),
+            new RecipeCategory("Starter"),
+            new RecipeCategory("Sandwiches"),
+            new RecipeCategory("Alcohol-cocktail"),
+            new RecipeCategory("Main course"),
+            new RecipeCategory("Preps"),
+            new RecipeCategory("Biscuits and cookies"),
+            new RecipeCategory("Soup"),
+            new RecipeCategory("Preserve"),
+            new RecipeCategory("Desserts")
         };
     }
 
