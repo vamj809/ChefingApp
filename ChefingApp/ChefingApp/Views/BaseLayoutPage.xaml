@@ -12,7 +12,7 @@
             <local:HomePage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage  Title="Discovery" BarBackground="#75CCFF">
+    <NavigationPage  Title="Discovery" BarBackground="#75CCFF" >
         <x:Arguments>
             <local:DiscoveryPage />
         </x:Arguments>

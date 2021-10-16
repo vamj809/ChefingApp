@@ -9,7 +9,7 @@
                 <Label Text="Delight yourself with our recipes!" Style="{StaticResource TitleLabelStyle}" />
             </Frame>
             <Entry Text="{Binding SearchString}" Placeholder="Search for your favorite recipe..."/>
-            <Button Text="Search" Command="{Binding SearchCommand}"/>
+            <Button Text="Search" Command="{Binding SearchCommand}" BackgroundColor="#557693"/>
             <ListView ItemsSource="{Binding RecipesCollection}" 
                       SelectedItem="{Binding SelectedRecipe}" 
                       SelectionMode="Single" Margin="20" VerticalOptions="FillAndExpand">

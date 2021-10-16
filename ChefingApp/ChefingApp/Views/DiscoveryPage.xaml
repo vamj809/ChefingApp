@@ -15,12 +15,12 @@
             
             <CollectionView ItemsSource="{Binding DiscoveryMeals}" SelectionMode="Single" VerticalOptions="StartAndExpand">
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" Span="2"/>
+                    <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="20" VerticalItemSpacing="20"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame>
-                            <Label Text="{Binding Description}" Style="{StaticResource OptionLabelStyle}"/>
+                        <Frame Style="{StaticResource ButtonLabelStyle}">
+                            <Label Text="{Binding Description}"/>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

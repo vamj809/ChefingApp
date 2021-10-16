@@ -14,7 +14,8 @@
                 <Setter Property="TextColor" Value="Black" />
             </Style>
             <Style x:Key="OptionLabelStyle" TargetType="Label">
-                
+                <Setter Property="BackgroundColor" Value="#64ABD4"/>
+               
             </Style>
             <Style x:Key="DescriptionLabelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Small" />
@@ -34,6 +35,11 @@
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="FontSize" Value="36"/>
             </Style>
+            <Style x:Key="ButtonLabelStyle" TargetType="Label">
+                <Setter Property="Background" Value="#557693"/>
+                <Setter Property="HeightRequest" Value="20"/>
+            </Style>
+
         </ResourceDictionary>
 
     </Application.Resources>
