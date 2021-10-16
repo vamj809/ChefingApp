@@ -29,6 +29,20 @@
 
             <Label Text="Popular Recipes"  Style="{StaticResource HeaderLabelStyle}" HorizontalOptions="Center" />
 
+            <CollectionView ItemsSource="{Binding RecipesSuggestions}" 
+                            SelectionMode="Single" SelectedItem="{Binding SelectedRecipe}" 
+                            VerticalOptions="StartAndExpand">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal" Span="2" HorizontalItemSpacing="20" VerticalItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Style="{StaticResource ButtonLabelStyle}" >
+                            <Label Text="{Binding Description}" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             <Grid >
                 <Button Grid.Row="0" ImageSource="{Binding Recipe.Image}"/>
 

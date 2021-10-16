@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace ChefingApp.ViewModels
 {
-    public class DiscoveryPageViewModel : BaseRecipeNavigationViewModel
+    public class DiscoveryPageViewModel : BaseNavigationViewModel
     {
         private RecipeCategory _selectedRecipeCategory;
         public RecipeCategory SelectedRecipeCategory
@@ -20,8 +20,11 @@ namespace ChefingApp.ViewModels
                 _selectedRecipeCategory = value;
                 if (_selectedRecipeCategory != null)
                 {
-                    GoToSearchCommand.Execute(
-                        _selectedRecipeCategory.IsInternal ? null : _selectedRecipeCategory.Description);
+                    NavigateToPageCommand.Execute(
+                        new NavigationParams(
+                            _selectedRecipeCategory.IsInternal ? NavigationConstants.Paths.Discovery : NavigationConstants.Paths.SearchRecipes,
+                            NavigationConstants.Parameters.RecipeCategory, _selectedRecipeCategory.Description)
+                        );
                 }
             }
         }

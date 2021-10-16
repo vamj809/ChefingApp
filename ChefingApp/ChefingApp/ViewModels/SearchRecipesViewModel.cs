@@ -9,7 +9,7 @@ using Xamarin.Essentials;
 
 namespace ChefingApp.ViewModels
 {
-    class SearchRecipesViewModel : BaseViewModel, IInitialize
+    class SearchRecipesViewModel : BaseNavigationViewModel, IInitialize
     {
         public string Title { get; set; }
         public string SearchString { get; set; }
@@ -24,7 +24,13 @@ namespace ChefingApp.ViewModels
                 _selectedRecipe = value;
                 if(_selectedRecipe != null)
                 {
-                    GoToRecipeDetailsCommand.Execute(_selectedRecipe);
+                    NavigateToPageCommand.Execute(
+                        new NavigationParams(
+                            NavigationConstants.Paths.RecipeDetails,
+                            NavigationConstants.Parameters.RecipeItem,
+                            _selectedRecipe.Recipe
+                        )
+                    );
                 }
             }
         }
@@ -39,17 +45,7 @@ namespace ChefingApp.ViewModels
             SearchCommand = new DelegateCommand(OnSearchClicked);
             _recipeApiService = recipesApiService;
             _pageDialog = pageDialog;
-            GoToRecipeDetailsCommand = new DelegateCommand<RecipeHits>(ExecuteNavigateCommand);
         }
-
-        public async void ExecuteNavigateCommand(RecipeHits recipeHits)
-        {
-            await NavigationService.NavigateAsync($"{NavigationConstants.Paths.RecipeDetails}", new NavigationParameters()
-            {
-                { NavigationConstants.Parameters.RecipeItem, recipeHits.Recipe }
-            });
-        }
-
         public async void OnSearchClicked()
         {
             if (string.IsNullOrWhiteSpace(SearchString))
