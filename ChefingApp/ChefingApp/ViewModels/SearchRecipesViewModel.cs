@@ -69,6 +69,14 @@ namespace ChefingApp.ViewModels
         public void Initialize(INavigationParameters parameters)
         {
             _selectedRecipe = null;
+            if (parameters.TryGetValue(NavigationConstants.Parameters.RecipeCategory, out string searchString))
+            {
+                SearchString = searchString;
+                if(SearchString != null)
+                {
+                    OnSearchClicked();
+                }
+            }
         }
     }
 }

@@ -20,18 +20,7 @@ namespace ChefingApp.Services
                 BaseAddress = new Uri(Config.ApiBaseUrl)
             };
         }
-        /*public async bool isQueryValid(string query)
-        {
-            if (string.IsNullOrWhiteSpace(SearchString))
-            {
-                await _pageDialog.DisplayAlertAsync(AppResources.AlertDisplayTitle, AppResources.SearchRecipesEmptyFieldError, AppResources.AcceptButtonText);
-            }
-            else if (Connectivity.NetworkAccess != NetworkAccess.Internet)
-            {
-                await _pageDialog.DisplayAlertAsync(AppResources.WarningDisplayTitle, AppResources.SearchRecipesDisconnectionError, AppResources.AcceptButtonText);
-            }
-            return true;
-        }*/
+
         public async Task<ObservableCollection<RecipeHits>> GetRecipesAsync(string query)
         {
             HttpResponseMessage response = await _httpClient.GetAsync($"?type=public&app_id={Config.ApiApplicationID}&app_key={Config.ApiAccessKey}&q={query}&field=label&field=image&field=url&field=ingredientLines&field=calories&field=source");
