@@ -19,7 +19,9 @@
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Button Text="{Binding Description}"/>
+                        <Frame>
+                            <Label Text="{Binding Description}" Style="{StaticResource OptionLabelStyle}"/>
+                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

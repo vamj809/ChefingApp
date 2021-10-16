@@ -12,13 +12,17 @@
         <StackLayout>
             <Label HorizontalOptions="Center" Text="Meals of the Day" Style="{StaticResource HeaderLabelStyle}"/>
 
-            <CollectionView ItemsSource="{Binding MealsOfTheDayList}" SelectionMode="Single" VerticalOptions="StartAndExpand">
+            <CollectionView ItemsSource="{Binding MealsOfTheDayList}" 
+                            SelectionMode="Single" SelectedItem="{Binding SelectedRecipeCategory}" 
+                            VerticalOptions="StartAndExpand">
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" Span="2"/>
+                    <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="20" VerticalItemSpacing="20"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Button Text="{Binding Description}"/>
+                        <Frame>
+                            <Label Text="{Binding Description}" Style="{StaticResource OptionLabelStyle}"/>
+                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

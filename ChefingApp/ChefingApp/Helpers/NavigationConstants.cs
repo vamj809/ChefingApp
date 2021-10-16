@@ -18,6 +18,7 @@
         {
             public const string RecipeItem = "RecipeItem";
             public const string RecipeUrl = "RecipeUrl";
+            public const string RecipeCategory = "RecipeCategory";
         }
     }
 }
